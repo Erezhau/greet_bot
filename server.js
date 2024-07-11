@@ -6,3 +6,10 @@ bot.start((ctx) => ctx.reply('Welcome to AritmetiClash! Start the Mini App by pr
 bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 bot.launch()
 
+const PORT = process.env.PORT || 3000;
+bot.launch({
+  webhook: {
+    domain: process.env.RENDER_EXTERNAL_URL,
+    port: PORT
+  }
+});
